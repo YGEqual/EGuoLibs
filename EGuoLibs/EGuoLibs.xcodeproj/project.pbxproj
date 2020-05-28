@@ -10,12 +10,14 @@
 		9F1C03BD247F6F93003167E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C03BC247F6F93003167E9 /* AppDelegate.m */; };
 		9F1C03C0247F6F93003167E9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C03BF247F6F93003167E9 /* SceneDelegate.m */; };
 		9F1C03C3247F6F93003167E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C03C2247F6F93003167E9 /* ViewController.m */; };
-		9F1C03C6247F6F93003167E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C03C4247F6F93003167E9 /* Main.storyboard */; };
-		9F1C03C8247F6F95003167E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C03C7247F6F95003167E9 /* Assets.xcassets */; };
-		9F1C03CB247F6F95003167E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C03C9247F6F95003167E9 /* LaunchScreen.storyboard */; };
-		9F1C03CE247F6F95003167E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C03CD247F6F95003167E9 /* main.m */; };
 		9F1C03D8247F6F96003167E9 /* EGuoLibsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C03D7247F6F96003167E9 /* EGuoLibsTests.m */; };
 		9F1C03E3247F6F96003167E9 /* EGuoLibsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C03E2247F6F96003167E9 /* EGuoLibsUITests.m */; };
+		9F1C0401247F9E1A003167E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C03FA247F9E1A003167E9 /* Assets.xcassets */; };
+		9F1C0402247F9E1A003167E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C03FB247F9E1A003167E9 /* LaunchScreen.storyboard */; };
+		9F1C0403247F9E1A003167E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C03FD247F9E1A003167E9 /* Main.storyboard */; };
+		9F1C0404247F9E1A003167E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C03FF247F9E1A003167E9 /* main.m */; };
+		9F1C0405247F9E1A003167E9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C0400247F9E1A003167E9 /* Info.plist */; };
+		DDAC423D96C47BEECCE8278F /* libPods-EGuoLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB9CA47B82EA20B465BFC8D /* libPods-EGuoLibs.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		298F8755D671362B0E902A07 /* Pods-EGuoLibs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EGuoLibs.debug.xcconfig"; path = "Target Support Files/Pods-EGuoLibs/Pods-EGuoLibs.debug.xcconfig"; sourceTree = "<group>"; };
+		3EB9CA47B82EA20B465BFC8D /* libPods-EGuoLibs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EGuoLibs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1C03B8247F6F93003167E9 /* EGuoLibs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EGuoLibs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1C03BB247F6F93003167E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F1C03BC247F6F93003167E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,17 +47,18 @@
 		9F1C03BF247F6F93003167E9 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		9F1C03C1247F6F93003167E9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9F1C03C2247F6F93003167E9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9F1C03C5247F6F93003167E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9F1C03C7247F6F95003167E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9F1C03CA247F6F95003167E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9F1C03CC247F6F95003167E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F1C03CD247F6F95003167E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F1C03D3247F6F96003167E9 /* EGuoLibsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EGuoLibsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1C03D7247F6F96003167E9 /* EGuoLibsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGuoLibsTests.m; sourceTree = "<group>"; };
 		9F1C03D9247F6F96003167E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F1C03DE247F6F96003167E9 /* EGuoLibsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EGuoLibsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1C03E2247F6F96003167E9 /* EGuoLibsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGuoLibsUITests.m; sourceTree = "<group>"; };
 		9F1C03E4247F6F96003167E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F1C03FA247F9E1A003167E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F1C03FC247F9E1A003167E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F1C03FE247F9E1A003167E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F1C03FF247F9E1A003167E9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F1C0400247F9E1A003167E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A774D00F3B334C77EEFC9A78 /* Pods-EGuoLibs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EGuoLibs.release.xcconfig"; path = "Target Support Files/Pods-EGuoLibs/Pods-EGuoLibs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDAC423D96C47BEECCE8278F /* libPods-EGuoLibs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68BEA5BAA0B1D46E116F78D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				298F8755D671362B0E902A07 /* Pods-EGuoLibs.debug.xcconfig */,
+				A774D00F3B334C77EEFC9A78 /* Pods-EGuoLibs.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9146ECA89A1CB0E83E7BDC7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EB9CA47B82EA20B465BFC8D /* libPods-EGuoLibs.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F1C03AF247F6F93003167E9 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +111,8 @@
 				9F1C03D6247F6F96003167E9 /* EGuoLibsTests */,
 				9F1C03E1247F6F96003167E9 /* EGuoLibsUITests */,
 				9F1C03B9247F6F93003167E9 /* Products */,
+				68BEA5BAA0B1D46E116F78D0 /* Pods */,
+				9146ECA89A1CB0E83E7BDC7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,11 +135,11 @@
 				9F1C03BF247F6F93003167E9 /* SceneDelegate.m */,
 				9F1C03C1247F6F93003167E9 /* ViewController.h */,
 				9F1C03C2247F6F93003167E9 /* ViewController.m */,
-				9F1C03C4247F6F93003167E9 /* Main.storyboard */,
-				9F1C03C7247F6F95003167E9 /* Assets.xcassets */,
-				9F1C03C9247F6F95003167E9 /* LaunchScreen.storyboard */,
-				9F1C03CC247F6F95003167E9 /* Info.plist */,
-				9F1C03CD247F6F95003167E9 /* main.m */,
+				9F1C03F6247F8B9F003167E9 /* Category */,
+				9F1C03F1247F8B9E003167E9 /* CommonTools */,
+				9F1C03F0247F8B9E003167E9 /* HttpManager */,
+				9F1C03F5247F8B9F003167E9 /* UICommon */,
+				9F1C03F9247F9E1A003167E9 /* Other */,
 			);
 			path = EGuoLibs;
 			sourceTree = "<group>";
@@ -137,6 +162,47 @@
 			path = EGuoLibsUITests;
 			sourceTree = "<group>";
 		};
+		9F1C03F0247F8B9E003167E9 /* HttpManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HttpManager;
+			sourceTree = "<group>";
+		};
+		9F1C03F1247F8B9E003167E9 /* CommonTools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonTools;
+			sourceTree = "<group>";
+		};
+		9F1C03F5247F8B9F003167E9 /* UICommon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UICommon;
+			sourceTree = "<group>";
+		};
+		9F1C03F6247F8B9F003167E9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9F1C03F9247F9E1A003167E9 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C03FF247F9E1A003167E9 /* main.m */,
+				9F1C0400247F9E1A003167E9 /* Info.plist */,
+				9F1C03FD247F9E1A003167E9 /* Main.storyboard */,
+				9F1C03FB247F9E1A003167E9 /* LaunchScreen.storyboard */,
+				9F1C03FA247F9E1A003167E9 /* Assets.xcassets */,
+			);
+			name = Other;
+			path = EGuoLibs/Other;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F1C03E7247F6F96003167E9 /* Build configuration list for PBXNativeTarget "EGuoLibs" */;
 			buildPhases = (
+				E5A73ADD81CCB7667BB465FE /* [CP] Check Pods Manifest.lock */,
 				9F1C03B4247F6F93003167E9 /* Sources */,
 				9F1C03B5247F6F93003167E9 /* Frameworks */,
 				9F1C03B6247F6F93003167E9 /* Resources */,
@@ -240,9 +307,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F1C03CB247F6F95003167E9 /* LaunchScreen.storyboard in Resources */,
-				9F1C03C8247F6F95003167E9 /* Assets.xcassets in Resources */,
-				9F1C03C6247F6F93003167E9 /* Main.storyboard in Resources */,
+				9F1C0405247F9E1A003167E9 /* Info.plist in Resources */,
+				9F1C0403247F9E1A003167E9 /* Main.storyboard in Resources */,
+				9F1C0401247F9E1A003167E9 /* Assets.xcassets in Resources */,
+				9F1C0402247F9E1A003167E9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +330,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E5A73ADD81CCB7667BB465FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EGuoLibs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F1C03B4247F6F93003167E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,7 +362,7 @@
 			files = (
 				9F1C03C3247F6F93003167E9 /* ViewController.m in Sources */,
 				9F1C03BD247F6F93003167E9 /* AppDelegate.m in Sources */,
-				9F1C03CE247F6F95003167E9 /* main.m in Sources */,
+				9F1C0404247F9E1A003167E9 /* main.m in Sources */,
 				9F1C03C0247F6F93003167E9 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,20 +399,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9F1C03C4247F6F93003167E9 /* Main.storyboard */ = {
+		9F1C03FB247F9E1A003167E9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9F1C03C5247F6F93003167E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9F1C03C9247F6F95003167E9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F1C03CA247F6F95003167E9 /* Base */,
+				9F1C03FC247F9E1A003167E9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9F1C03FD247F9E1A003167E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F1C03FE247F9E1A003167E9 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -437,12 +530,13 @@
 		};
 		9F1C03E8247F6F96003167E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 298F8755D671362B0E902A07 /* Pods-EGuoLibs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2TR47X523P;
-				INFOPLIST_FILE = EGuoLibs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_FILE = EGuoLibs/Other/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,12 +549,13 @@
 		};
 		9F1C03E9247F6F96003167E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A774D00F3B334C77EEFC9A78 /* Pods-EGuoLibs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2TR47X523P;
-				INFOPLIST_FILE = EGuoLibs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_FILE = EGuoLibs/Other/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
