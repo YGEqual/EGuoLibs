@@ -14,21 +14,25 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - IQKeyboardManager (6.5.5)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - IQKeyboardManager
   - Masonry
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - IQKeyboardManager
     - Masonry
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: a74af57796aab7a3927011043af2899086f001a9
+PODFILE CHECKSUM: 6313fe6a21b6b2684b0116971374c1ab63a793fe
 
 COCOAPODS: 1.9.2

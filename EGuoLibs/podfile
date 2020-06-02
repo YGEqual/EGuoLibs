@@ -4,5 +4,7 @@ target 'EGuoLibs' do
 
 pod 'AFNetworking'
 pod 'Masonry'
+#退出键盘
+pod 'IQKeyboardManager'
 
 end

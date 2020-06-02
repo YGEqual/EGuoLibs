@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  EGuoLibs
 //
-//  Created by 王义国 on 2020/5/28.
-//  Copyright © 2020 小王同学. All rights reserved.
+//  Created by E.Guo on 2020/5/28.
+//  Copyright © 2020 E.Guo. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    
     return YES;
 }
 

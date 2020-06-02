@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  EGuoLibs
+//
+//  Created by E.Guo on 2020/5/28.
+//  Copyright © 2020 E.Guo. All rights reserved.
+//
+//  pch为iOS的预置文件，可全局访问
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "BaseViewController.h"
+// 我自定义的一些 key 和 define
+#import "DefineHeader.h"
+//
+#import <Masonry.h>
+#endif /* PrefixHeader_pch */

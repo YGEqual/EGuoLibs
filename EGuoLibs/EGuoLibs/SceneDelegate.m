@@ -1,5 +1,6 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 @interface SceneDelegate ()
 
@@ -14,6 +15,8 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     if (@available(iOS 13.0, *)) {
     }else{
+        [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+        
         UIWindowScene *windowScene = (UIWindowScene *)scene;
         self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
         self.window.frame = windowScene.coordinateSpace.bounds;
