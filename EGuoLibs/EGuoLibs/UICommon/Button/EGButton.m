@@ -30,8 +30,8 @@
 
 // UI
 - (void)setMainUI{
-    self.backgroundColor = UIColorGray;
-    [self setTitleColor:UIColorOrange forState:UIControlStateNormal];
+    self.backgroundColor = UIButtonBgColor;
+    [self setTitleColor:UIColorWhite forState:UIControlStateNormal];
     self.layer.cornerRadius = 10.f;
 }
 

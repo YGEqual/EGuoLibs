@@ -9,7 +9,9 @@
 #import "ViewController.h"
 
 //正则表达式
-#import "RegularVC.h"
+#import "EGRegularVC.h"
+//数据持久化
+#import "EGPerformanceVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -41,7 +43,7 @@ static NSString *EGuoLibsCellID = @"EGuoLibsCellID";
     
     self.navigationItem.title = @"EGuoLibs";
     
-    _dataArray = [@[@"正则表达式"] mutableCopy];
+    _dataArray = [@[@"正则表达式",@"数据持久化"] mutableCopy];
 }
 
 #pragma mark - UITableViewDelegate&&UITableViewDataSource
@@ -78,12 +80,18 @@ static NSString *EGuoLibsCellID = @"EGuoLibsCellID";
     switch (indexPath.row) {
         case 0:
             {
-                RegularVC *regularVC = [[RegularVC alloc]init];
+                EGRegularVC *regularVC = [[EGRegularVC alloc]init];
                 regularVC.navigationItem.title = @"正则表达式";
                 [self.navigationController pushViewController:regularVC animated:YES];
             }
             break;
-            
+         case 1:
+            {
+                EGPerformanceVC *performanceVC = [[EGPerformanceVC alloc]init];
+                performanceVC.navigationItem.title = @"数据持久化";
+                [self.navigationController pushViewController:performanceVC animated:YES];
+            }
+            break;
         default:
             break;
     }

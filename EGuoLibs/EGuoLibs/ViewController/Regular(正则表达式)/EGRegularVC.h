@@ -1,5 +1,5 @@
 //
-//  RegularVC.h
+//  EGRegularVC.h
 //  EGuoLibs
 //
 //  Created by E.Guo on 2020/5/28.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RegularVC : BaseViewController
+@interface EGRegularVC : BaseViewController
 
 @end
 

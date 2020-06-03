@@ -1,18 +1,17 @@
 //
-//  RegularVC.m
+//  EGRegularVC.m
 //  EGuoLibs
 //
 //  Created by E.Guo on 5050/5/28.
 //  Copyright © 5050 E.Guo. All rights reserved.
 //
 
-#import "RegularVC.h"
+#import "EGRegularVC.h"
 #import "NSString+Regular.h"
 #import "EGButton.h"
-#import "UIView+EGKitToast.h"
 #import "EGTextField.h"
 
-@interface RegularVC ()
+@interface EGRegularVC ()
 @property(nonatomic, strong) EGTextField *verifyTF;
 @property(nonatomic, strong) EGButton *numberBtn;//验证纯数字
 @property(nonatomic, strong) EGButton *letterBtn;//验证纯字母
@@ -20,7 +19,7 @@
 
 @end
 
-@implementation RegularVC
+@implementation EGRegularVC
 - (instancetype)init
 {
     self = [super init];
@@ -81,7 +80,9 @@
 //纯数字
 - (void)numberAction:(UIButton *)button{
     [self.view endEditing:YES];
-    BOOL isYES = [self.verifyTF.text isOnlyContainNumber];
+//    BOOL isYES = [self.verifyTF.text isOnlyContainNumber];
+//    BOOL isYES = [self.verifyTF.text isOnlyContainNumber:5 max:10];
+    BOOL isYES = [self.verifyTF.text isOnlyContainChinese];
     [self.view egkit_makeToast:isYES?@"仅包含数字":@"不仅包含数字"];
 }
 
@@ -95,7 +96,7 @@
 //数字+字母
 - (void)numLetAction:(UIButton *)button{
     [self.view endEditing:YES];
-    BOOL isYES = [self.verifyTF.text isOnlyContainLetter];
+    BOOL isYES = [self.verifyTF.text isContainNumAndLetter];
     [self.view egkit_makeToast:isYES?@"仅包含数字+字母":@"不仅包含数字+字母"];
 }
 

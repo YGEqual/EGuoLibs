@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
 
+- (void)showAlert:(NSString *)message;
+
 @end
 
 NS_ASSUME_NONNULL_END

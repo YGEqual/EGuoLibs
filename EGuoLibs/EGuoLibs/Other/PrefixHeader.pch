@@ -13,6 +13,8 @@
 #import "BaseViewController.h"
 // 我自定义的一些 key 和 define
 #import "DefineHeader.h"
-//
 #import <Masonry.h>
+#import "UIView+EGKitToast.h"
+
+
 #endif /* PrefixHeader_pch */

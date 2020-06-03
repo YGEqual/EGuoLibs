@@ -18,12 +18,14 @@
 		9F1C0404247F9E1A003167E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C03FF247F9E1A003167E9 /* main.m */; };
 		9F1C0405247F9E1A003167E9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C0400247F9E1A003167E9 /* Info.plist */; };
 		9F1C040B247FA509003167E9 /* NSString+Regular.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C040A247FA509003167E9 /* NSString+Regular.m */; };
-		9F1C0410247FB2D5003167E9 /* RegularVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C040F247FB2D5003167E9 /* RegularVC.m */; };
+		9F1C0410247FB2D5003167E9 /* EGRegularVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C040F247FB2D5003167E9 /* EGRegularVC.m */; };
 		9F1C0414247FB46E003167E9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C0413247FB46E003167E9 /* BaseViewController.m */; };
 		9FFBB51D2485E401000B8CDE /* EGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB51C2485E401000B8CDE /* EGButton.m */; };
 		9FFBB5212485EDFD000B8CDE /* UIView+EGKitToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB5202485EDFD000B8CDE /* UIView+EGKitToast.m */; };
 		9FFBB5252485F06D000B8CDE /* EGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB5242485F06D000B8CDE /* EGTextField.m */; };
 		9FFBB5282485F7F3000B8CDE /* EGPerformanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB5272485F7F3000B8CDE /* EGPerformanceVC.m */; };
+		9FFBB53724862D4F000B8CDE /* EGPerformanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB53624862D4F000B8CDE /* EGPerformanceManager.m */; };
+		9FFBB54124865789000B8CDE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB54024865789000B8CDE /* Person.m */; };
 		DDAC423D96C47BEECCE8278F /* libPods-EGuoLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB9CA47B82EA20B465BFC8D /* libPods-EGuoLibs.a */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +69,8 @@
 		9F1C0400247F9E1A003167E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F1C0409247FA509003167E9 /* NSString+Regular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Regular.h"; sourceTree = "<group>"; };
 		9F1C040A247FA509003167E9 /* NSString+Regular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regular.m"; sourceTree = "<group>"; };
-		9F1C040E247FB2D5003167E9 /* RegularVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegularVC.h; sourceTree = "<group>"; };
-		9F1C040F247FB2D5003167E9 /* RegularVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegularVC.m; sourceTree = "<group>"; };
+		9F1C040E247FB2D5003167E9 /* EGRegularVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGRegularVC.h; sourceTree = "<group>"; };
+		9F1C040F247FB2D5003167E9 /* EGRegularVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGRegularVC.m; sourceTree = "<group>"; };
 		9F1C0412247FB46E003167E9 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		9F1C0413247FB46E003167E9 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		9F1C0415247FB569003167E9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -81,6 +83,10 @@
 		9FFBB5242485F06D000B8CDE /* EGTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGTextField.m; sourceTree = "<group>"; };
 		9FFBB5262485F7F3000B8CDE /* EGPerformanceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGPerformanceVC.h; sourceTree = "<group>"; };
 		9FFBB5272485F7F3000B8CDE /* EGPerformanceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGPerformanceVC.m; sourceTree = "<group>"; };
+		9FFBB53524862D4F000B8CDE /* EGPerformanceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGPerformanceManager.h; sourceTree = "<group>"; };
+		9FFBB53624862D4F000B8CDE /* EGPerformanceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGPerformanceManager.m; sourceTree = "<group>"; };
+		9FFBB53F24865789000B8CDE /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		9FFBB54024865789000B8CDE /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		A774D00F3B334C77EEFC9A78 /* Pods-EGuoLibs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EGuoLibs.release.xcconfig"; path = "Target Support Files/Pods-EGuoLibs/Pods-EGuoLibs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +202,8 @@
 		9F1C03F1247F8B9E003167E9 /* CommonTools */ = {
 			isa = PBXGroup;
 			children = (
+				9FFBB53524862D4F000B8CDE /* EGPerformanceManager.h */,
+				9FFBB53624862D4F000B8CDE /* EGPerformanceManager.m */,
 			);
 			path = CommonTools;
 			sourceTree = "<group>";
@@ -248,8 +256,8 @@
 		9F1C040D247FB29B003167E9 /* Regular(正则表达式) */ = {
 			isa = PBXGroup;
 			children = (
-				9F1C040E247FB2D5003167E9 /* RegularVC.h */,
-				9F1C040F247FB2D5003167E9 /* RegularVC.m */,
+				9F1C040E247FB2D5003167E9 /* EGRegularVC.h */,
+				9F1C040F247FB2D5003167E9 /* EGRegularVC.m */,
 			);
 			path = "Regular(正则表达式)";
 			sourceTree = "<group>";
@@ -268,6 +276,8 @@
 			children = (
 				9FFBB5262485F7F3000B8CDE /* EGPerformanceVC.h */,
 				9FFBB5272485F7F3000B8CDE /* EGPerformanceVC.m */,
+				9FFBB53F24865789000B8CDE /* Person.h */,
+				9FFBB54024865789000B8CDE /* Person.m */,
 			);
 			path = "Performance（持久化）";
 			sourceTree = "<group>";
@@ -449,12 +459,14 @@
 			files = (
 				9FFBB5212485EDFD000B8CDE /* UIView+EGKitToast.m in Sources */,
 				9FFBB5282485F7F3000B8CDE /* EGPerformanceVC.m in Sources */,
+				9FFBB53724862D4F000B8CDE /* EGPerformanceManager.m in Sources */,
 				9FFBB5252485F06D000B8CDE /* EGTextField.m in Sources */,
 				9F1C03C3247F6F93003167E9 /* ViewController.m in Sources */,
 				9F1C040B247FA509003167E9 /* NSString+Regular.m in Sources */,
 				9F1C03BD247F6F93003167E9 /* AppDelegate.m in Sources */,
-				9F1C0410247FB2D5003167E9 /* RegularVC.m in Sources */,
+				9F1C0410247FB2D5003167E9 /* EGRegularVC.m in Sources */,
 				9F1C0404247F9E1A003167E9 /* main.m in Sources */,
+				9FFBB54124865789000B8CDE /* Person.m in Sources */,
 				9FFBB51D2485E401000B8CDE /* EGButton.m in Sources */,
 				9F1C0414247FB46E003167E9 /* BaseViewController.m in Sources */,
 				9F1C03C0247F6F93003167E9 /* SceneDelegate.m in Sources */,

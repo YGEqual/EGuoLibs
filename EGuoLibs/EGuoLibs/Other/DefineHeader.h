@@ -65,11 +65,49 @@
 #define UIColorBlue                 [UIColor blueColor]
 #define UIColorYellow               [UIColor yellowColor]
 #define UIColorOrange               [UIColor orangeColor]
+#define UIButtonBgColor             UIColorFromRGB(0xa3848c)
+
+//颜色的定义
+#define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0f]
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define UIColorFromRGBA(rgbValue, alphaValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0x0000FF))/255.0 \
+alpha:alphaValue]
+
+#define UIColorFromRGB(rgbValue) UIColorFromRGBA(rgbValue, 1.0)
+
+// 适用于16进制直接6位颜色
+#define UICOLORFROMRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+// 十六进制加上透明度的设定
+#define UICOLORFROMRGBA(rgbValue,alphas) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphas]
+
+
+#pragma mark - 文件根路径
+// Cache缓存的主目录 -- 缓存地址
+#define CACHES_DIRECTORY     [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
+// CACHES的目录下的文件
+#define CACHES_PATH(path) [CACHES_DIRECTORY stringByAppendingPathComponent:path]
+// Document的主目录 -- 可以通过itunes 进行同步
+#define DOCUMENT_DIRECTORY   [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+// DOCUMENT的目录下的文件
+#define DOCUMENT_PATH(path) [DOCUMENT_DIRECTORY stringByAppendingPathComponent:path]
+// TEMP的主目录 -- 不需要同步的临时数据
+#define TEMP_DIRECTORY   NSTemporaryDirectory()
+// TEMP的目录下的文件
+#define TEMP_PATH(path) [TEMP_DIRECTORY stringByAppendingPathComponent:path]
 
 #pragma mark - 自定义输出方法
 #ifdef DEBUG // 处于开发阶段
     #if TARGET_IPHONE_SIMULATOR
-        #define EGLog(...) EGLog(@"[%@:%d] %@",[[NSString stringWithUTF8String:__FILE__] lastPathComponent],__LINE__,[NSString stringWithFormat:__VA_ARGS__] )
+        #define EGLog(...) NSLog(@"[%@:%d] %@",[[NSString stringWithUTF8String:__FILE__] lastPathComponent],__LINE__,[NSString stringWithFormat:__VA_ARGS__] )
 
     #elif TARGET_OS_IPHONE
         #define LRString [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent

@@ -30,12 +30,13 @@
 
 // UI
 - (void)setMainUI{
-    self.backgroundColor = UIColorGray;
+    self.placeholder = @"请输入...";
     self.layer.borderColor = UIColorGreen.CGColor;
     self.layer.borderWidth = 1;
     self.layer.cornerRadius = 5.f;
 }
 
+// HiddenInputView
 - (void)hiddenInputView{
     //输入视图为系统默认键盘
     self.inputView = nil;

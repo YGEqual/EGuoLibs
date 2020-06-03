@@ -12,8 +12,6 @@
 
 @end
 
-static NSString *EGuoLibsBaseCellID = @"EGuoLibsBaseCellID";
-
 @implementation BaseViewController
 
 - (void)viewDidLoad {
@@ -22,9 +20,15 @@ static NSString *EGuoLibsBaseCellID = @"EGuoLibsBaseCellID";
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-//self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
-//-(void)backAction{
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
+- (void)showAlert:(NSString *)message
+{
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
+    
+    [alertVC addAction:firstAction];
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
 
 @end
