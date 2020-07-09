@@ -104,6 +104,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphas]
 // TEMP的目录下的文件
 #define TEMP_PATH(path) [TEMP_DIRECTORY stringByAppendingPathComponent:path]
 
+#pragma mark - Apple 内购路径
+#define AppStoreInfoLocalFilePath [NSString stringWithFormat:@"%@/%@/", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],@"EGLibAppleIAP"]
+
 #pragma mark - 自定义输出方法
 #ifdef DEBUG // 处于开发阶段
     #if TARGET_IPHONE_SIMULATOR

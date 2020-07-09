@@ -20,6 +20,10 @@
 		9F1C040B247FA509003167E9 /* NSString+Regular.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C040A247FA509003167E9 /* NSString+Regular.m */; };
 		9F1C0410247FB2D5003167E9 /* EGRegularVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C040F247FB2D5003167E9 /* EGRegularVC.m */; };
 		9F1C0414247FB46E003167E9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C0413247FB46E003167E9 /* BaseViewController.m */; };
+		9F6B0D0324B6F89C00239436 /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B0D0224B6F89C00239436 /* IAPViewController.m */; };
+		9F6B0D0A24B7064200239436 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B0D0924B7064200239436 /* GTMBase64.m */; };
+		9F6B0D0D24B7094000239436 /* EGIAPSecurityHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B0D0C24B7094000239436 /* EGIAPSecurityHandle.m */; };
+		9F79767D24B5C3ED00685A5E /* EGIAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F79767C24B5C3ED00685A5E /* EGIAPManager.m */; };
 		9FFBB51D2485E401000B8CDE /* EGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB51C2485E401000B8CDE /* EGButton.m */; };
 		9FFBB5212485EDFD000B8CDE /* UIView+EGKitToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB5202485EDFD000B8CDE /* UIView+EGKitToast.m */; };
 		9FFBB5252485F06D000B8CDE /* EGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBB5242485F06D000B8CDE /* EGTextField.m */; };
@@ -75,6 +79,15 @@
 		9F1C0413247FB46E003167E9 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		9F1C0415247FB569003167E9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9F1C0416247FB662003167E9 /* DefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineHeader.h; sourceTree = "<group>"; };
+		9F6B0D0124B6F89C00239436 /* IAPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
+		9F6B0D0224B6F89C00239436 /* IAPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
+		9F6B0D0724B7064200239436 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		9F6B0D0824B7064200239436 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		9F6B0D0924B7064200239436 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		9F6B0D0B24B7094000239436 /* EGIAPSecurityHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGIAPSecurityHandle.h; sourceTree = "<group>"; };
+		9F6B0D0C24B7094000239436 /* EGIAPSecurityHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGIAPSecurityHandle.m; sourceTree = "<group>"; };
+		9F79767924B5B14E00685A5E /* EGIAPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGIAPManager.h; sourceTree = "<group>"; };
+		9F79767C24B5C3ED00685A5E /* EGIAPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGIAPManager.m; sourceTree = "<group>"; };
 		9FFBB51B2485E401000B8CDE /* EGButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGButton.h; sourceTree = "<group>"; };
 		9FFBB51C2485E401000B8CDE /* EGButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGButton.m; sourceTree = "<group>"; };
 		9FFBB51F2485EDFD000B8CDE /* UIView+EGKitToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EGKitToast.h"; sourceTree = "<group>"; };
@@ -168,6 +181,7 @@
 				9F1C03F6247F8B9F003167E9 /* Category */,
 				9F1C03F1247F8B9E003167E9 /* CommonTools */,
 				9F1C03F0247F8B9E003167E9 /* HttpManager */,
+				9F79767824B5B12200685A5E /* APPPayManager */,
 				9F1C03F5247F8B9F003167E9 /* UICommon */,
 				9F1C03F9247F9E1A003167E9 /* Other */,
 			);
@@ -202,8 +216,8 @@
 		9F1C03F1247F8B9E003167E9 /* CommonTools */ = {
 			isa = PBXGroup;
 			children = (
-				9FFBB53524862D4F000B8CDE /* EGPerformanceManager.h */,
-				9FFBB53624862D4F000B8CDE /* EGPerformanceManager.m */,
+				9F6B0D0624B7064200239436 /* GTMBase64 */,
+				9F6B0D0424B7061900239436 /* Performance */,
 			);
 			path = CommonTools;
 			sourceTree = "<group>";
@@ -249,6 +263,7 @@
 				9F1C0411247FB456003167E9 /* BaseViewController(基类) */,
 				9F1C040D247FB29B003167E9 /* Regular(正则表达式) */,
 				9FFBB5192485DD30000B8CDE /* Performance（持久化） */,
+				9F6B0D0024B6F87700239436 /* IAP（内购） */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -269,6 +284,45 @@
 				9F1C0413247FB46E003167E9 /* BaseViewController.m */,
 			);
 			path = "BaseViewController(基类)";
+			sourceTree = "<group>";
+		};
+		9F6B0D0024B6F87700239436 /* IAP（内购） */ = {
+			isa = PBXGroup;
+			children = (
+				9F6B0D0124B6F89C00239436 /* IAPViewController.h */,
+				9F6B0D0224B6F89C00239436 /* IAPViewController.m */,
+			);
+			path = "IAP（内购）";
+			sourceTree = "<group>";
+		};
+		9F6B0D0424B7061900239436 /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+				9FFBB53524862D4F000B8CDE /* EGPerformanceManager.h */,
+				9FFBB53624862D4F000B8CDE /* EGPerformanceManager.m */,
+			);
+			path = Performance;
+			sourceTree = "<group>";
+		};
+		9F6B0D0624B7064200239436 /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				9F6B0D0724B7064200239436 /* GTMBase64.h */,
+				9F6B0D0924B7064200239436 /* GTMBase64.m */,
+				9F6B0D0824B7064200239436 /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		9F79767824B5B12200685A5E /* APPPayManager */ = {
+			isa = PBXGroup;
+			children = (
+				9F79767924B5B14E00685A5E /* EGIAPManager.h */,
+				9F79767C24B5C3ED00685A5E /* EGIAPManager.m */,
+				9F6B0D0B24B7094000239436 /* EGIAPSecurityHandle.h */,
+				9F6B0D0C24B7094000239436 /* EGIAPSecurityHandle.m */,
+			);
+			path = APPPayManager;
 			sourceTree = "<group>";
 		};
 		9FFBB5192485DD30000B8CDE /* Performance（持久化） */ = {
@@ -459,12 +513,16 @@
 			files = (
 				9FFBB5212485EDFD000B8CDE /* UIView+EGKitToast.m in Sources */,
 				9FFBB5282485F7F3000B8CDE /* EGPerformanceVC.m in Sources */,
+				9F79767D24B5C3ED00685A5E /* EGIAPManager.m in Sources */,
+				9F6B0D0A24B7064200239436 /* GTMBase64.m in Sources */,
 				9FFBB53724862D4F000B8CDE /* EGPerformanceManager.m in Sources */,
 				9FFBB5252485F06D000B8CDE /* EGTextField.m in Sources */,
 				9F1C03C3247F6F93003167E9 /* ViewController.m in Sources */,
+				9F6B0D0D24B7094000239436 /* EGIAPSecurityHandle.m in Sources */,
 				9F1C040B247FA509003167E9 /* NSString+Regular.m in Sources */,
 				9F1C03BD247F6F93003167E9 /* AppDelegate.m in Sources */,
 				9F1C0410247FB2D5003167E9 /* EGRegularVC.m in Sources */,
+				9F6B0D0324B6F89C00239436 /* IAPViewController.m in Sources */,
 				9F1C0404247F9E1A003167E9 /* main.m in Sources */,
 				9FFBB54124865789000B8CDE /* Person.m in Sources */,
 				9FFBB51D2485E401000B8CDE /* EGButton.m in Sources */,

@@ -77,6 +77,31 @@
     return [EGPerformanceManager sharedManager];
 }
 
+#pragma mark - 文件夹
+- (void)createFolderWithFile:(NSString *)filePath{
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isDir;
+    BOOL isExit = [fileManager fileExistsAtPath:filePath isDirectory:&isDir];
+    
+    if (!isExit || !isDir)
+    {
+        [fileManager createDirectoryAtPath:filePath
+               withIntermediateDirectories:YES
+                                attributes:nil
+                                     error:nil];
+    }
+}
+
+//删除文件
+- (void)removeFolderWithFile:(NSString *)filePath {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:filePath])
+    {
+        [fileManager removeItemAtPath:filePath error:nil];
+    }
+}
+
 #pragma mark - 请阅读
 //下面为一个单例对象的标准写法，
 //+(instancetype)sharedManager{

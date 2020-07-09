@@ -40,6 +40,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 是否为email地址
 - (BOOL)isEmailAddress;
 
+
+/// 获取32位UUID
++ (NSString *)getUUIDString;
+
 @end
 
 NS_ASSUME_NONNULL_END

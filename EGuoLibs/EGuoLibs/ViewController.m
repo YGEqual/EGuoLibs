@@ -12,6 +12,8 @@
 #import "EGRegularVC.h"
 //数据持久化
 #import "EGPerformanceVC.h"
+//IAP 购买
+#import "IAPViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -43,7 +45,7 @@ static NSString *EGuoLibsCellID = @"EGuoLibsCellID";
     
     self.navigationItem.title = @"EGuoLibs";
     
-    _dataArray = [@[@"正则表达式",@"数据持久化"] mutableCopy];
+    _dataArray = [@[@"正则表达式",@"数据持久化",@"IAP内部购买"] mutableCopy];
 }
 
 #pragma mark - UITableViewDelegate&&UITableViewDataSource
@@ -91,6 +93,13 @@ static NSString *EGuoLibsCellID = @"EGuoLibsCellID";
                 performanceVC.navigationItem.title = @"数据持久化";
                 [self.navigationController pushViewController:performanceVC animated:YES];
             }
+            break;
+        case 2:
+        {
+            IAPViewController *performanceVC = [[IAPViewController alloc]init];
+            performanceVC.navigationItem.title = @"IAP购买";
+            [self.navigationController pushViewController:performanceVC animated:YES];
+        }
             break;
         default:
             break;

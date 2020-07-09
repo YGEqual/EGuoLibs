@@ -104,9 +104,7 @@ NSString * const EGKitToastPositionBottom          = @"bottom";
 
 - (void)egkit_showToast:(UIView *)toast duration:(NSTimeInterval)duration position:(id)position {
     [self egkit_showToast:toast duration:duration position:position tapCallback:nil];
-    
 }
-
 
 - (void)egkit_showToast:(UIView *)toast duration:(NSTimeInterval)duration position:(id)position
       tapCallback:(void(^)(void))tapCallback
@@ -124,16 +122,16 @@ NSString * const EGKitToastPositionBottom          = @"bottom";
     [self addSubview:toast];
     
     [UIView animateWithDuration:EGKitToastFadeDuration
-                          delay:0.0
-                        options:(UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAllowUserInteraction)
-                     animations:^{
-                         toast.alpha = 1.0;
-                     } completion:^(BOOL finished) {
-                         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:duration target:self selector:@selector(egkit_toastTimerDidFinish:) userInfo:toast repeats:NO];
-                         // associate the timer with the toast view
-                         objc_setAssociatedObject (toast, &EGKitToastTimerKey, timer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                         objc_setAssociatedObject (toast, &EGKitToastTapCallbackKey, tapCallback, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-                     }];
+          delay:0.0
+        options:(UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAllowUserInteraction)
+     animations:^{
+         toast.alpha = 1.0;
+     } completion:^(BOOL finished) {
+         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:duration target:self selector:@selector(egkit_toastTimerDidFinish:) userInfo:toast repeats:NO];
+         // associate the timer with the toast view
+         objc_setAssociatedObject (toast, &EGKitToastTimerKey, timer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+         objc_setAssociatedObject (toast, &EGKitToastTapCallbackKey, tapCallback, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+     }];
 }
 
 

@@ -76,6 +76,7 @@
 
 //是否是身份证号
 - (BOOL)isPersonIDNumber{
+    //只判断身份证格式，精确性不保证 需要再做精确性判断
     NSString *regular = @"\\d{17}[\\d|x]|\\d{15}";
     return [self isValidateByRegex:regular];
 }
@@ -90,6 +91,23 @@
 - (BOOL)isValidateByRegex:(NSString *)regex{
     NSPredicate * pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     return [pre evaluateWithObject:self];
+}
+
+#pragma mark - 生成32位UUID
+/**
+ *  生成32位UUID
+ */
++ (NSString *)getUUIDString{
+    
+    CFUUIDRef uuid_ref = CFUUIDCreate(NULL);
+    CFStringRef uuid_string_ref= CFUUIDCreateString(NULL, uuid_ref);
+    NSString *uuid = [NSString stringWithString:(__bridge NSString *)uuid_string_ref];
+    CFRelease(uuid_ref);
+    CFRelease(uuid_string_ref);
+
+    //去除UUID ”-“
+    NSString *UUID = [[uuid lowercaseString] stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    return [UUID uppercaseString];
 }
 
 @end
