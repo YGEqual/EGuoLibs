@@ -2,13 +2,14 @@
 //  EGIAPSecurityHandle.m
 //  EGuoLibs
 //
-//  Created by 王义国 on 2020/7/9.
+//  Created by EGuo on 2020/7/9.
 //  Copyright © 2020 小王同学. All rights reserved.
 //
 
 #import "EGIAPSecurityHandle.h"
 #import "NSString+Regular.h"
 #import "EGPerformanceManager.h"
+#import "EGFileHandle.h"
 
 @interface EGIAPSecurityHandle()
 
@@ -29,7 +30,7 @@
 {
     self = [super init];
     if (self) {
-        [[EGPerformanceManager sharedManager]createFolderWithFile:AppStoreInfoLocalFilePath];
+        [[EGFileHandle sharedHandle]createFolderWithFile:AppStoreInfoLocalFilePath];
     }
     return self;
 }
@@ -111,7 +112,7 @@
 
 //验证成功就从plist中移除凭证
 -(void)removeReceipt{
-    [[EGPerformanceManager sharedManager]removeFolderWithFile:AppStoreInfoLocalFilePath];
+    [[EGFileHandle sharedHandle]removeFolderWithFile:AppStoreInfoLocalFilePath];
 }
 
 #pragma mark - 初始化

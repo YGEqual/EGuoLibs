@@ -95,12 +95,12 @@ static NSString *EGuoLibsCellID = @"EGuoLibsCellID";
             }
             break;
         case 2:
-        {
-            IAPViewController *performanceVC = [[IAPViewController alloc]init];
-            performanceVC.navigationItem.title = @"IAP购买";
-            [self.navigationController pushViewController:performanceVC animated:YES];
-        }
-            break;
+            {
+                IAPViewController *performanceVC = [[IAPViewController alloc]init];
+                performanceVC.navigationItem.title = @"IAP购买";
+                [self.navigationController pushViewController:performanceVC animated:YES];
+            }
+                break;
         default:
             break;
     }

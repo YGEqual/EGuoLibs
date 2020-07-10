@@ -1,4 +1,5 @@
 platform:ios,'8.0'
+inhibit_all_warnings!
 
 target 'EGuoLibs' do
 
@@ -6,5 +7,6 @@ pod 'AFNetworking'
 pod 'Masonry'
 #退出键盘
 pod 'IQKeyboardManager'
+pod 'MBProgressHUD'
 
 end

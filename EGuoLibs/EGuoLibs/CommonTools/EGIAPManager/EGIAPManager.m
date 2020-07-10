@@ -2,7 +2,7 @@
 //  APPPayManager.m
 //  EGuoLibs
 //
-//  Created by 王义国 on 2020/7/8.
+//  Created by EGuo on 2020/7/8.
 //  Copyright © 2020 小王同学. All rights reserved.
 //
 // 苹果要求，内购的虚拟货币是必须要走IAP的，所以基于这种需求，可以把IAP的方式做活，思路如下：
@@ -24,7 +24,8 @@
 //苹果内购
 #import <StoreKit/StoreKit.h>
 #import "GTMBase64.h"
-
+#import "EGProgressHud.h"
+#import "EGHttpManager.h"
 
 #ifdef DEBUG // 处于开发阶段
 
@@ -43,8 +44,8 @@
 {
     NSString *_currentProductId;//当前购买的产品id
     
-    SuccessIAPBlock _successIAPBlock;
-    FailedIAPBlock  _failedIAPBlock;
+    __block SuccessIAPBlock _successIAPBlock;
+    __block FailedIAPBlock  _failedIAPBlock;
 }
 @property(nonatomic, copy) NSString *receipt;
 
@@ -80,6 +81,8 @@
 
 //发起支付
 -(void)initiateApplePayment:(NSString *)productid successBlock:(SuccessIAPBlock)successBlock failedIAPBlock:(FailedIAPBlock)failedIAPBlock{
+    [EGProgressHud showIndicator];
+    
     //是否有IAP购买权限
     if ([self isCanApplePay]) {
         _successIAPBlock = successBlock;
@@ -95,7 +98,7 @@
     _currentProductId = productid;
     
     //增加请求苹果的loading
-    //[MyProgressHud showIndicator];
+    [EGProgressHud showIndicator];
     
     NSMutableArray * purchasesArray = [NSMutableArray array];
     [purchasesArray addObject:productid];
@@ -112,7 +115,6 @@
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
     //提示 购买失败
-    //[self show:@"购买失败"];
     _failedIAPBlock(@"购买失败,请重试");
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
@@ -167,30 +169,30 @@
 
 //查询成功后的回调
 - (void)productsRequest:(nonnull SKProductsRequest *)request didReceiveResponse:(nonnull SKProductsResponse *)response {
+    
+    EGLog(@"thread = %@",[NSThread currentThread]);
     if(response.products.count==0){
-      EGLog(@"请求商品信息失败！");
-        _failedIAPBlock(@"请求商品信息失败！");
-//      [MyProgressHud hideIndicator];
-//      [MyProgressHud showToastHUDView:@"请求商品信息失败！"];
-      return;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self->_failedIAPBlock(@"请求商品信息失败！");
+            EGLog(@"请求商品信息失败！");
+            [EGProgressHud hideIndicator];
+            [EGProgressHud showToastHUDView:@"请求商品信息失败！"];
+        });
+        return;
     }
-    EGLog(@"请求商品信息成功！发起购买");
     SKProduct * product = [response.products firstObject];
     EGLog(@"产品ID:%@",product.productIdentifier);
     EGLog(@"产品价格：%@",product.price);
-
-    SKPayment * payment = [SKPayment paymentWithProduct:product];
     EGLog(@"发送购买请求");
-//    [MyProgressHud hideIndicator];
+    SKPayment * payment = [SKPayment paymentWithProduct:product];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
 //查询失败后的回调
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
-    
     ///  隐藏各种提示和loading
     EGLog(@"[error localizedDescription] = %@",[error localizedDescription]);
-//    [self showMessage:[error localizedDescription]];
+    [EGProgressHud showToastHUDView:[error localizedDescription]];
     _failedIAPBlock([error localizedDescription]);
 }
 
@@ -218,8 +220,19 @@
  */
 - (void)getIOSVerifyStutasHttpRequestWithtransaction:(SKPaymentTransaction *)transaction receipt:(id)receipt andPaytype:(BOOL)paytype
 {
-    //验证完成之后删除订单
-    [self completeTransaction:transaction];
+    [EGProgressHud showToastHUDView:@"购买凭据验证中，请勿退出"];
+    
+    [[EGHttpManager sharedManager]POST:@"url" parameters:@{@"parameters":@"parameters"} success:^(id  _Nonnull response, BOOL status, NSInteger code) {
+        if (status) {
+            //验证完成之后删除订单
+            [self completeTransaction:transaction];
+            [EGProgressHud hideIndicator];
+            self->_successIAPBlock();
+        }
+    } failure:^(NSError * _Nonnull error) {
+        [EGProgressHud hideIndicator];
+        self->_failedIAPBlock(@"购买验证未通过");
+    }];
 }
 
 @end

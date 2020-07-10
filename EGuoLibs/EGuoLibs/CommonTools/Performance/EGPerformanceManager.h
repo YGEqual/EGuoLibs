@@ -37,15 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 //读取temp数据
 -(id)readFromTempPlist:(NSString *)targetPath;
 
-
-/// 新建文件夹
-/// @param filePath 文件路径
-- (void)createFolderWithFile:(NSString *)filePath;
-
-/// 移除文件夹
-/// @param filePath 文件路径
-- (void)removeFolderWithFile:(NSString *)filePath;
-
 //-(void)writeUserDefault:(NSString *)keyValue forKeyPath:(NSString *)keyPath;
 //
 //-(nullable id)readUserDefaultValue:(NSString *)keyPath;

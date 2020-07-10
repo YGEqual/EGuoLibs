@@ -2,7 +2,7 @@
 //  IAPViewController.h
 //  EGuoLibs
 //
-//  Created by 王义国 on 2020/7/9.
+//  Created by EGuo on 2020/7/9.
 //  Copyright © 2020 小王同学. All rights reserved.
 //
 

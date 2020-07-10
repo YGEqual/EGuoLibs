@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
+#import "EGIAPSecurityHandle.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //全应用点击输入内容外进行退出键盘
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    
+    //进行IAP验证购买问题
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    //从服务器验证receipt失败之后，在程序再次启动的时候，使用保存的receipt再次到服务器验证
+    if ([fileManager fileExistsAtPath:AppStoreInfoLocalFilePath]) {
+        //如果在改路下不存在文件，说明就没有保存验证失败后的购买凭证，也就是说发送凭证成功。
+        //存在购买凭证，说明发送凭证失败，再次发起验证
+        [[EGIAPSecurityHandle sharedHandle] sendFailedIAPFiles];
+    }
     
     return YES;
 }
