@@ -34,7 +34,7 @@ typedef void(^FailedBlock)(NSError *error);
 /// @param progress 请求的进度
 /// @param success 成功回调
 /// @param failure 失败回调
--(void)GET:(NSString *)url parameters:(NSDictionary *)parameters progress:(HttpProgress)progress success:(SuccessBlock)success failure:(FailedBlock)failure;
+-(void)GET:(NSString *)url parameters:(NSDictionary *)parameters progress:(_Nullable HttpProgress)progress success:(SuccessBlock)success failure:(FailedBlock)failure;
 
 /// POST方法
 /// @param url url
@@ -48,7 +48,7 @@ typedef void(^FailedBlock)(NSError *error);
 /// @param progress 请求的进度
 /// @param success 成功回调
 /// @param failure 失败回调
--(void)POST:(NSString *)url parameters:(NSDictionary *)parameters progress:(HttpProgress)progress success:(SuccessBlock)success failure:(FailedBlock)failure;
+-(void)POST:(NSString *)url parameters:(NSDictionary *)parameters progress:(_Nullable HttpProgress)progress success:(SuccessBlock)success failure:(FailedBlock)failure;
 
 
 @end

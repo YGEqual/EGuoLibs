@@ -81,8 +81,7 @@
 
 //发起支付
 -(void)initiateApplePayment:(NSString *)productid successBlock:(SuccessIAPBlock)successBlock failedIAPBlock:(FailedIAPBlock)failedIAPBlock{
-    [EGProgressHud showIndicator];
-    
+
     //是否有IAP购买权限
     if ([self isCanApplePay]) {
         _successIAPBlock = successBlock;
@@ -90,6 +89,7 @@
         [self _startIAPApplePayment:productid successBlock:successBlock failedIAPBlock:failedIAPBlock];
     } else {
         failedIAPBlock(@"用户禁止应用内付费购买");
+        [EGProgressHud hideIndicator];
     }
 }
 
@@ -110,16 +110,21 @@
 }
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
+    [EGProgressHud hideIndicator];
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
     //提示 购买失败
-    _failedIAPBlock(@"购买失败,请重试");
+    if (_failedIAPBlock) {
+        _failedIAPBlock(@"购买失败,请重试");
+    }
+    [EGProgressHud hideIndicator];
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
+    [EGProgressHud hideIndicator];
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
 
@@ -170,13 +175,14 @@
 //查询成功后的回调
 - (void)productsRequest:(nonnull SKProductsRequest *)request didReceiveResponse:(nonnull SKProductsResponse *)response {
     
-    EGLog(@"thread = %@",[NSThread currentThread]);
     if(response.products.count==0){
         dispatch_async(dispatch_get_main_queue(), ^{
-            self->_failedIAPBlock(@"请求商品信息失败！");
-            EGLog(@"请求商品信息失败！");
-            [EGProgressHud hideIndicator];
-            [EGProgressHud showToastHUDView:@"请求商品信息失败！"];
+            if (self->_failedIAPBlock) {
+                self->_failedIAPBlock(@"请求商品信息失败！");
+                EGLog(@"请求商品信息失败！");
+                [EGProgressHud hideIndicator];
+                [EGProgressHud showToastHUDView:@"请求商品信息失败！"];
+            }
         });
         return;
     }
@@ -192,8 +198,12 @@
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
     ///  隐藏各种提示和loading
     EGLog(@"[error localizedDescription] = %@",[error localizedDescription]);
-    [EGProgressHud showToastHUDView:[error localizedDescription]];
-    _failedIAPBlock([error localizedDescription]);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [EGProgressHud showToastHUDView:[error localizedDescription]];
+        if (self->_failedIAPBlock) {
+            self->_failedIAPBlock([error localizedDescription]);
+        }
+    });
 }
 
 #pragma mark - 初始化
@@ -227,11 +237,15 @@
             //验证完成之后删除订单
             [self completeTransaction:transaction];
             [EGProgressHud hideIndicator];
-            self->_successIAPBlock();
+            if (self->_successIAPBlock) {
+                self->_successIAPBlock();
+            }
         }
     } failure:^(NSError * _Nonnull error) {
         [EGProgressHud hideIndicator];
-        self->_failedIAPBlock(@"购买验证未通过");
+        if (self->_failedIAPBlock) {
+            self->_failedIAPBlock(@"购买验证未通过");
+        }
     }];
 }
 

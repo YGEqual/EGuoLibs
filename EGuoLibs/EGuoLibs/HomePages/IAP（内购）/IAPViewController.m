@@ -19,11 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [[EGIAPManager sharedManager]initiateApplePayment:@"dasada" successBlock:^{
+//        EGLog(@"成功");
+//    } failedIAPBlock:^(NSString * _Nonnull error) {
+//        EGLog(@"error = %@",error);
+//        [EGProgressHud showIndicator];
+//    }];
     [[EGIAPManager sharedManager]initiateApplePayment:@"dasada" successBlock:^{
         EGLog(@"成功");
     } failedIAPBlock:^(NSString * _Nonnull error) {
-        EGLog(@"error = %@",error);
-        [EGProgressHud showIndicator];
+        EGLog(@"失败");
     }];
 }
 
