@@ -8,5 +8,6 @@ pod 'Masonry'
 #退出键盘
 pod 'IQKeyboardManager'
 pod 'MBProgressHUD'
+pod 'SVProgressHUD'
 
 end

@@ -232,7 +232,7 @@
 {
     [EGProgressHud showToastHUDView:@"购买凭据验证中，请勿退出"];
     
-    [[EGHttpManager sharedManager]POST:@"url" parameters:@{@"parameters":@"parameters"} success:^(id  _Nonnull response, BOOL status, NSInteger code) {
+    [EGHttpManager POST:@"url" parameters:@{@"parameters":@"parameters"} success:^(id  _Nonnull response, BOOL status, NSInteger code) {
         if (status) {
             //验证完成之后删除订单
             [self completeTransaction:transaction];

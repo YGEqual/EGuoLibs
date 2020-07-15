@@ -419,6 +419,7 @@
 				9F1C03B4247F6F93003167E9 /* Sources */,
 				9F1C03B5247F6F93003167E9 /* Frameworks */,
 				9F1C03B6247F6F93003167E9 /* Resources */,
+				7D8FECFD91031B965C23C4A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -536,6 +537,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7D8FECFD91031B965C23C4A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EGuoLibs/Pods-EGuoLibs-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EGuoLibs/Pods-EGuoLibs-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EGuoLibs/Pods-EGuoLibs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E5A73ADD81CCB7667BB465FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

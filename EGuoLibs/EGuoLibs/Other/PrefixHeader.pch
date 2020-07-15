@@ -16,5 +16,4 @@
 #import <Masonry.h>
 #import "UIView+EGKitToast.h"
 
-
 #endif /* PrefixHeader_pch */

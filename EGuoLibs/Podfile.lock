@@ -17,12 +17,14 @@ PODS:
   - IQKeyboardManager (6.5.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking
   - IQKeyboardManager
   - Masonry
   - MBProgressHUD
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
@@ -30,13 +32,15 @@ SPEC REPOS:
     - IQKeyboardManager
     - Masonry
     - MBProgressHUD
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: cdf51d755785baa4ddc8ba1b9990f33e3ceb75b2
+PODFILE CHECKSUM: f14a91289e5c5109c7ee452397a62a9bc495ecdd
 
 COCOAPODS: 1.9.2
