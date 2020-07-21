@@ -176,4 +176,51 @@ EGHttpSecurityHandle类用于网络安全类，用于防代理和防越狱的手
 + (BOOL)getJailbrokenStatus;
 ```
 
+>7、EGLocationManager 用于定位的简单使用 获取到当前定位的信息
+```
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol EGLocationInfoDelegate <NSObject>
+
+//自己增加想要的代理方法用，目前只实现一个返回城市的
+-(void)didUpdatingSuccess;
+
+//获取失败。包括权限获取失败等
+-(void)didUpdatingError;
+
+@end
+
+@interface EGLocationManager : NSObject
+
+/// 开始获取位置信息-WhenInUse
+- (void)startGetLocationInfoWhenInUse;
+/// 开始获取位置信息-Always
+- (void)startGetLocationInfoAlways;
+/// 刷新位置信息
+- (void)reloadLocationInfo;
+/// 停止获取位置信息
+- (void)stopGetLocationInfo;
+
+
+// 位置名
+@property(nonatomic, copy, readonly) NSString *name;
+// 街道
+@property(nonatomic, copy, readonly) NSString *thoroughfare;
+// 子街道
+@property(nonatomic, copy, readonly) NSString *subThoroughfare;
+// 市
+@property(nonatomic, copy, readonly) NSString *locality;
+// 区
+@property(nonatomic, copy, readonly) NSString *subLocality;
+// 国家
+@property(nonatomic, copy, readonly) NSString *country;
+
+@property (nonatomic, weak)id<EGLocationInfoDelegate> delegate;
+
+@end
+
+NS_ASSUME_NONNULL_END
+```
 
