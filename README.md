@@ -224,3 +224,23 @@ NS_ASSUME_NONNULL_BEGIN
 NS_ASSUME_NONNULL_END
 ```
 
+>8、EGLocalNotificationCenter 本地通知管理类，负责发送本地通知
+
+```
+@interface EGLocalNotificationCenter : NSObject
+
+-(instancetype)initWithIdentifier:(NSString *)pushIdentifier;
+
+/// 本地通知
+/// @param title 标题
+/// @param subtitle 子标题
+/// @param body 内容
+- (void)pushLocalNotificationWithTitle:(NSString *)title subtitle:(NSString *)subtitle body:(NSString *)body;
+
+/// 本地定时事件通知
+/// @param title 标题
+/// @param body 内容
+- (void)pushCalendarNotificationWithTitle:(NSString *)title body:(NSString *)body;
+
+@end
+```
